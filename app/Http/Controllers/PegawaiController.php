@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class PegawaiController extends Controller
 {
     public function index() {
-        $pegawai = DB::table('pegawai')->get();
+        $pegawai = DB::table('pegawai')->paginate(10);
 
         return view('index', ['pegawai' => $pegawai]);
     }
@@ -50,4 +50,17 @@ class PegawaiController extends Controller
 
         return redirect('/pegawai');
     }
+    
+    public function cari (Request $request) {
+
+        $cari = $request->cari;
+
+        $pegawai = DB::table('pegawai')
+        ->where('pegawai_nama', 'like', "%" .$cari. "%")
+        ->paginate();
+
+        return view('index',['pegawai'=>$pegawai]);
+    }
+
+
 }
