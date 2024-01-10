@@ -28,3 +28,5 @@ Route::get('/pegawai/edit/{id}', 'PegawaiController@edit');
 Route::post('/pegawai/update', 'PegawaiController@update');
 Route::get('/pegawai/hapus/{id}', 'PegawaiController@hapus');
 Route::get('/pegawai/cari', 'PegawaiController@cari');
+Route::get('/input', 'ReaController@input');
+Route::post('/proses', 'ReaController@proses');
