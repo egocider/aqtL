@@ -30,3 +30,5 @@ Route::get('/pegawai/hapus/{id}', 'PegawaiController@hapus');
 Route::get('/pegawai/cari', 'PegawaiController@cari');
 Route::get('/input', 'ReaController@input');
 Route::post('/proses', 'ReaController@proses');
+Route::get('/mahasiswa', 'MahasiswaController@index');
+Route::get('siswa', 'siswaController@index');
